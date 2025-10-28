@@ -16,7 +16,7 @@ PREDMETI = [
 
 # --- Funkcija za login ---
 def login():
-    st.title("Beleske - Login")
+    st.title("Beleške - Login")
     username = st.text_input("Korisničko ime")
     password = st.text_input("Šifra", type="password")
     if st.button("Prijavi se"):
