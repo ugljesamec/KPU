@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-# --- Konstantne ---
+# --- Logovanje i predmeti ---
 ADMIN_USERNAME = "admin"
 ADMIN_PASSWORD = "kadm1n"
 CSV_FILE = "db.csv"
@@ -14,7 +14,7 @@ PREDMETI = [
     "Kriminalističke istrage visokotehnološkog kriminala"
 ]
 
-# --- Funkcija za login ---
+# --- Funkcija za logovanje ---
 def login():
     st.title("Beleške - Login")
     username = st.text_input("Korisničko ime")
@@ -154,7 +154,7 @@ def view_notes(predmet):
 
 # --- Glavni ekran predmeta ---
 def subject_screen(predmet):
-    st.title(f"Beleske - {predmet}")
+    st.title(f"Beleške - {predmet}")
     tab = st.tabs(["Unos", "Edit", "Brisanje", "Pregled"])
     with tab[0]:
         add_note(predmet)
@@ -173,7 +173,7 @@ def main():
     if not st.session_state['logged_in']:
         login()
     else:
-        st.title("Beleske")
+        st.title("Beleške")
         st.subheader("Izaberi predmet")
         predmet_odabir = st.selectbox("Predmeti", PREDMETI, key="main_subject_select")
         subject_screen(predmet_odabir)
